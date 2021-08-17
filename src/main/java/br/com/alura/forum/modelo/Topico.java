@@ -32,6 +32,14 @@ public class Topico {
 	@ManyToOne
 	private Curso curso;
 	
+	public Topico() {}
+	
+	public Topico(String titulo, String mensagem, Curso curso) {
+		this.titulo = titulo;
+		this.mensagem = mensagem;
+		this.curso = curso;
+	}
+
 	@OneToMany(mappedBy="topico")
 	private List<Resposta> respostas = new ArrayList<>();
 
